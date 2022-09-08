@@ -2,18 +2,11 @@
 
 namespace GreatMed.Controllers
 {
-    public class HomeController : Controller
+    public class ServicesController : Controller
     {
-
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
     }
 }
