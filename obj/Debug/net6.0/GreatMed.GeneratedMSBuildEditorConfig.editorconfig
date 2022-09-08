@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GreatMed
 build_property.RootNamespace = GreatMed
-build_property.ProjectDir = C:\Users\it-7\Desktop\GreatMed\
+build_property.ProjectDir = C:\Users\vados\OneDrive\Рабочий стол\GreatMed\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\it-7\Desktop\GreatMed
+build_property.MSBuildProjectDirectory = C:\Users\vados\OneDrive\Рабочий стол\GreatMed
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/About/Index.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Home/Index.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Home/Privacy.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Services/Index.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Services/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/CssPartial.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/CssPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENzc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/FooterPartial.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3RlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/HeaderPartial.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/HeaderPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/MetaPartial.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/MetaPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1ldGFQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/ScriptsPartial.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/ScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/Shared/_Layout.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/_ViewImports.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/it-7/Desktop/GreatMed/Views/_ViewStart.cshtml]
+[C:/Users/vados/OneDrive/Рабочий стол/GreatMed/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
