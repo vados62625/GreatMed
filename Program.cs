@@ -6,10 +6,10 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.Bind("GMConfig", new GMConfig());
+builder.Configuration.Bind("GMConfig", new GreatMed.Service.GMService());
 
 builder.Services.AddControllersWithViews().AddSessionStateTempDataProvider();
-builder.Services.AddDbContext<DBContent>(options => options.UseSqlServer(GMConfig.ConnectionString));
+builder.Services.AddDbContext<DBContent>(options => options.UseSqlServer(GreatMed.Service.GMService.ConnectionString));
 
 var app = builder.Build();
 
@@ -21,6 +21,12 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 });
+
+using (var scope = app.Services.CreateScope())
+{
+    DBContent content = scope.ServiceProvider.GetRequiredService<DBContent>();
+    DBObjects.Inital(content);
+}
 
 //app.MapGet("/", () => "Hello World!");
 
