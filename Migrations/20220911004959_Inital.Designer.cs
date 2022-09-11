@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatMed.Migrations
 {
     [DbContext(typeof(DBContent))]
-    [Migration("20220908123047_Inital")]
+    [Migration("20220911004959_Inital")]
     partial class Inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

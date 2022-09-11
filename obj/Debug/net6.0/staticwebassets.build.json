@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xktKjynGZNT0ra6zxTLEw3tCJ2K0EBN5Uya65l7ga9E=",
+  "Hash": "sok7to3tgAaU7r3hJ5KaXZCXnus7fQw3t5shfX8xxqI=",
   "Source": "GreatMed",
   "BasePath": "_content/GreatMed",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "GreatMed\\wwwroot",
       "Source": "GreatMed",
-      "ContentRoot": "C:\\Users\\it-7\\Desktop\\GreatMed\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dario\\Desktop\\GreatMed\\wwwroot\\",
       "BasePath": "_content/GreatMed",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\it-7\\Desktop\\GreatMed\\wwwroot\\css\\style.css",
+      "Identity": "C:\\Users\\dario\\Desktop\\GreatMed\\wwwroot\\css\\style.css",
       "SourceId": "GreatMed",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\it-7\\Desktop\\GreatMed\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\dario\\Desktop\\GreatMed\\wwwroot\\",
       "BasePath": "_content/GreatMed",
       "RelativePath": "css/style.css",
       "AssetKind": "All",

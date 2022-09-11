@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\it-7\\Desktop\\GreatMed\\GreatMed.csproj": {}
+    "C:\\Users\\dario\\Desktop\\GreatMed\\GreatMed.csproj": {}
   },
   "projects": {
-    "C:\\Users\\it-7\\Desktop\\GreatMed\\GreatMed.csproj": {
+    "C:\\Users\\dario\\Desktop\\GreatMed\\GreatMed.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\it-7\\Desktop\\GreatMed\\GreatMed.csproj",
+        "projectUniqueName": "C:\\Users\\dario\\Desktop\\GreatMed\\GreatMed.csproj",
         "projectName": "GreatMed",
-        "projectPath": "C:\\Users\\it-7\\Desktop\\GreatMed\\GreatMed.csproj",
-        "packagesPath": "C:\\Users\\it-7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\it-7\\Desktop\\GreatMed\\obj\\",
+        "projectPath": "C:\\Users\\dario\\Desktop\\GreatMed\\GreatMed.csproj",
+        "packagesPath": "C:\\Users\\dario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dario\\Desktop\\GreatMed\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\it-7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +40,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.8, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Routing": {
+              "target": "Package",
+              "version": "[2.2.2, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -79,7 +95,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -91,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
