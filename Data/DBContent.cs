@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GreatMed.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GreatMed.Data
 {

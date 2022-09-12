@@ -1,6 +1,6 @@
 ﻿namespace GreatMed.Service
 {
-    public class GMService
+    public class GMConfig
     {
 
         public static string ConnectionString { get; set; }

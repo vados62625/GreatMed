@@ -1,3 +1,21 @@
-﻿<div>
-    <h1 class="display-4 text-center">Наши услуги</h1>
+﻿@model GMServiceRepository
+<div>
+    <h1 class="display-4 text-center mb-5">Наши услуги</h1>
+    <div class="services container">
+        <div class="row">
+            @{
+                foreach (var item in Model.activeGMServices)
+                {
+            
+                    <a href="#" class="col-lg-3 col-md-4 col-sm-6 mb-4" style="height: 280px">
+                        <div class="service-card border rounded h-100 p-3">
+                            <h3 class="fs-20 mb-3">@item.Name</h3>
+                            <div class="">@item.Description</div>
+                        </div>
+                    </a>
+                    
+                }
+            }
+        </div>
+    </div>
 </div>
