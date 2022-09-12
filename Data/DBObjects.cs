@@ -1,4 +1,5 @@
 ﻿using GreatMed.Service;
+using GreatMed.Models;
 
 namespace GreatMed.Data
 {
@@ -37,22 +38,30 @@ namespace GreatMed.Data
                         new GMService 
                         { 
                             Name = "Вызов врача на дом", 
-                            Description = "Вызовите врача, и он приедет в любое удобное для вас время" 
+                            Description = "Вызовите врача, и он приедет в любое удобное для вас время",
+                            Price = 1000,
+                            IsActive = true
                         },
                         new GMService 
                         { 
                             Name = "Медицинская страховка", 
-                            Description = $"Оформите наш страховой медицинский полис и получите безлимитный доступ ко всем нашим услугам. Подробнее по телефону {Service.GMService.CompanyPhone}" 
+                            Description = $"Оформите наш страховой медицинский полис и получите безлимитный доступ ко всем нашим услугам. Подробнее по телефону {GMConfig.CompanyPhone}",
+                            Price = 1000,
+                            IsActive = true
                         },
                         new GMService 
                         { 
                             Name = "Скорая помощь", 
-                            Description = $"Для вызова нашей скорой помощи позвоните по номеру {Service.GMService.CompanyPhone}. Вызов бесплатный, вы оплачиваете только работу врачей" 
+                            Description = $"Для вызова нашей скорой помощи позвоните по номеру {GMConfig.CompanyPhone}. Вызов бесплатный, вы оплачиваете только работу врачей",
+                            Price = 1000,
+                            IsActive = true
                         },
                         new GMService 
                         { 
-                            Name = "Запись к специалисту", 
-                            Description = $"В нашей компании работают высококвалифицированные врачи, можете записаться на прием по телефону {Service.GMService.CompanyPhone}" 
+                            Name = "Запись к врачу", 
+                            Description = $"В нашей компании работают высококвалифицированные специалисты, можете записаться на прием по телефону {GMConfig.CompanyPhone}",
+                            Price = 1000,
+                            IsActive = true
                         },
                     };
 

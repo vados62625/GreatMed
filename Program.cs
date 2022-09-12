@@ -1,4 +1,6 @@
 using GreatMed.Data;
+using GreatMed.Data.Interfaces;
+using GreatMed.Data.Repository;
 using GreatMed.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -6,10 +8,11 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.Bind("GMConfig", new GreatMed.Service.GMService());
+builder.Configuration.Bind("GMConfig", new GMConfig());
 
 builder.Services.AddControllersWithViews().AddSessionStateTempDataProvider();
-builder.Services.AddDbContext<DBContent>(options => options.UseSqlServer(GreatMed.Service.GMService.ConnectionString));
+builder.Services.AddDbContext<DBContent>(options => options.UseSqlServer(GMConfig.ConnectionString));
+builder.Services.AddTransient<IGetServices, GMServiceRepository>();
 
 var app = builder.Build();
 

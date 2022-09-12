@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using GreatMed.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GreatMed.Data
