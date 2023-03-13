@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  motohelp:
+    image: ${DOCKER_REGISTRY-}motohelp
+    build:
+      context: .
+      dockerfile: Dockerfile

@@ -4,17 +4,18 @@
 
     @await Html.PartialAsync("MetaPartial")
     @await Html.PartialAsync("CssPartial")
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 </head>
 <body>
 
     @await Html.PartialAsync("HeaderPartial")
 
-    <div class="container">
-        <main role="main" class="pb-3 min-vh-100">
+    <main role="main" class="pt-5 pb-3">
+        <div class="container mt-5">
             @RenderBody()
-        </main>
-    </div>
+        </div>
+    </main>
 
     @await Html.PartialAsync("FooterPartial")
     @await Html.PartialAsync("ScriptsPartial")

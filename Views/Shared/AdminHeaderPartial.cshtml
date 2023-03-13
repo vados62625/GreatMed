@@ -1,0 +1,35 @@
+﻿@{
+    string controllerName = ViewContext.RouteData.Values["controller"].ToString();
+}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom box-shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img width="150" src="~/images/logo.png"></img>
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                <ul class="navbar-nav nav-tabs ms-lg-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link@(controllerName == "TextFields" ? " active" : "")" asp-area="Admin" asp-controller="TextFields" asp-action="Index">Страницы сайта</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link@(controllerName == "GetServices" ? " active" : "")" asp-area="Admin" asp-controller="GetServices" asp-action="Index">Редактировать услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link@(controllerName == "GetDetails" ? " active" : "")" asp-area="Admin" asp-controller="GetDetails" asp-action="Index">Редактировать запчасти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link@(controllerName == "Calls" ? " active" : "")" asp-area="Admin" asp-controller="Calls" asp-action="Index">Управление звонками</a>
+                    </li>                   
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Вернуться на сайт</a>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </nav>
+</header>

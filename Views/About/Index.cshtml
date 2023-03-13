@@ -1,3 +1,17 @@
-﻿<div>
-    <h1 class="display-4 text-center">О компании</h1>
+﻿@model TextField
+@{
+    ViewBag.Title = Model.MetaTitle ?? null;
+    ViewBag.Description = Model.MetaDescription ?? null;
+}
+<h1 class="display-5 text-center mb-5 pt-5">@Model.Title</h1>
+<div class="fs-5">
+    @Html.Raw(Model.Text)
+    <button class="btn btn-primary rounded-pill mb-3 mb-lg-0 mx-auto" type="button" data-bs-toggle="modal" data-bs-target="#orderCall">Записаться на ремонт</button>
+    <h3 class="my-4">Где нас найти:</h3>
+    <p style="text-indent: 0">
+        Адрес: 17-я лин. B.O., 52, Санкт-Петербург, 199178
+        <br>
+        График работы: ежедневно с 10:00 до 20:00
+    </p>
+    <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63945.822036859245!2d30.16152635190897!3d59.9436417696148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631c9589f037f%3A0xff1dc9f78b42afc1!2z0JzQvtGC0L7RgdC10YDQstC40YE!5e0!3m2!1sru!2sru!4v1675860504233!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>

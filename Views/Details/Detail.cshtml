@@ -1,0 +1,34 @@
+﻿@model MHDetail
+<h1 class="display-5 text-center mb-5 pt-5">@Model.Name</h1>
+<div class="row mb-3 gy-3">
+    <div class="images-container col-12 col-md-4">
+        <div class="detail-images owl-carousel owl-theme">
+            @{
+                if (Model.TitlePictire!= null)
+                {
+                    <img class="w-100 img-thumbnail" src="~/images/@Model.TitlePictire.Uri" alt="@Model.Name"></img>                
+                }
+            }
+            @{
+                if (Model.AdditionalPictures != null)
+                {
+                    foreach (var picture in Model.AdditionalPictures)
+                    {
+                        <img class="w-100 img-thumbnail" src="~/images/@picture.Uri" alt="@Model.Name"></img>
+                    }
+                }
+            }
+        </div>
+    </div>
+    <div class="col">
+        <div class="detail-price">
+            <div class="fs-5 mb-2">Цена: <span>@Model.Price</span>руб.</div>
+        </div>
+        @if(Model.Description != null){
+            <div class="detail-description">
+                <div class="fs-5 mb-2">Описание:</div>
+                <div>@Html.Raw(Model.Description)</div>
+            </div>
+        }
+    </div>
+</div>

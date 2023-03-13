@@ -1,25 +1,86 @@
 ﻿<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid mx-5">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GreatMed</a>
+    <nav class="navbar navbar-expand-lg navbar-dark border-bottom box-shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img width="150" src="~/images/logo.png"></img>
+                @*MotoHelp*@
+                </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between">
+                <ul class="navbar-nav ms-lg-auto text-center">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Услуги</a>
+                        <a class="nav-link" asp-area="" asp-controller="Details" asp-action="Index" asp-route-category="">Запчасти</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">О компании</a>
+                        <a class="nav-link" asp-area="" asp-controller="Services" asp-action="Index">Услуги</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="About" asp-action="Index">О компании</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-success rounded-pill mb-3 mb-lg-0" type="button" data-bs-toggle="modal" data-bs-target="#orderCall">Записаться на ремонт</button>
+                    </li>
+                    @*<li class="nav-item">
+                        <a class="nav-link d-flex justify-content-center" asp-controller="Personal" asp-action="Index">
+                            <div class="d-lg-none me-2">Личный кабинет</div>
+                            <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25" height="25" viewBox="0 0 396.884 509.009" enable-background="new 0 0 396.884 509.009" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path fill="currentColor" d="M305.398,106.962c0,59.069-47.886,106.956-106.956,106.956c-59.075,0-106.963-47.887-106.963-106.956
+			                                C91.479,47.887,139.367,0,198.442,0C257.512,0,305.398,47.887,305.398,106.962z" />
+                                    </g>
+                                    <g>
+                                        <path fill="currentColor" d="M198.442,258.486L198.442,258.486C88.844,258.486,0,347.333,0,456.936l0,0
+			                                c0,28.752,23.315,52.073,52.073,52.073H344.81c28.754,0,52.074-23.321,52.074-52.073l0,0
+			                                C396.884,347.333,308.037,258.486,198.442,258.486z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>*@
                 </ul>
                 <div></div>
             </div>
         </div>
     </nav>
 </header>
+<div class="modal fade" id="orderCall" tabindex="-1" aria-labelledby="orderCallLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderCallLabel">Заказать звонок</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderCallForm">
+                    <div class="mb-3">
+                        <label for="ordelCallName">Имя</label>
+                        <input type="text" class="form-control" name="Name" aria-describedby="emailHelp" placeholder="Имя">
+                    </div>
+                    <div class="mb-3">
+                        <label for="orderCallPhone">Телефон</label>
+                        <input type="text" class="form-control" name="Phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="personalDataCheck" required>
+                            <label class="form-check-label" for="personalDataCheck">Я принимаю <a class="link-primary" target="_blank" asp-area="" asp-controller="Home" asp-action="Privacy">Соглашение об использовании персональных данных</a></label>
+                        </div>
+                    </div>
+                </form>
+                <div class="alert alert-success d-none">Сообщение отправлено, мы свяжемся с вами в ближайшее время.</div>
+                <div class="alert alert-danger d-none">Ошибка. Данные не отправлены.</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Закрыть</button>
+                <button type="submit" form="orderCallForm" class="btn btn-primary rounded-pill">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>

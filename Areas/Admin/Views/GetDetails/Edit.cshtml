@@ -1,0 +1,110 @@
+﻿@model MHDetail
+@{
+    string strTitle = "Редактировать запись";
+    ViewBag.Title = strTitle;
+}
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+
+<div class="pt-5">
+    <h2>@strTitle</h2>
+    <div>
+        <form asp-area="Admin" asp-controller="GetDetails" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AdditionalPictures" />
+            <input type="hidden" asp-for="TitlePictire" />
+
+            <div asp-validation-summary="All"></div>
+            <div class="div-box mb-3">
+                <label asp-for="Name"></label>
+                <input class="form-control" asp-for="Name" />
+                <span class="invalid-feedback" asp-validation-for="Name"></span>
+            </div>
+            <div class="div-box mb-3">
+                <label asp-for="Price"></label>
+                <input class="form-control" asp-for="Price" />
+                <span class="invalid-feedback" asp-validation-for="Price"></span>
+            </div>
+            <div class="div-box mb-3">
+                <label asp-for="Description"></label>
+                <textarea class="form-control" asp-for="Description"></textarea>
+                <span class="invalid-feedback" asp-validation-for="Description"></span>
+            </div>
+            <div class="div-box mb-3">
+                <label asp-for="InStock"></label>
+                <input class="form-control" asp-for="InStock" />
+                <span class="invalid-feedback" asp-validation-for="InStock"></span>
+            </div>
+            <div class="div-box mb-3">
+                <label asp-for="TitlePictire"></label>
+                <input 
+                    class="form-control mb-2 
+                    @if (Model.TitlePictire != null){
+                        <text>d-none</text>
+                    }" 
+                    type="file" 
+                    accept=".png,.jpg,.webp,.jpeg,.img" 
+                    name="titleImageFile" 
+                    id="titleImageFile" />
+                <div>
+                    @if (Model.TitlePictire != null)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 d-flex border p-2">
+                                <img class="img-block w-50 border" src="~/images/@Model.TitlePictire.Uri" />
+                                <div class="w-50 p-1">
+                                    <button type="button" class="btn btn-danger w-100 delete-picture" picid="@Model.TitlePictire.Id">Удалить</button>
+                                </div>
+                            </div>
+                        }
+                </div>
+            </div>
+            <div class="div-box mb-3">
+                <label asp-for="AdditionalPictures"></label>
+                <input class="form-control mb-2" type="file" accept=".png,.jpg,.webp,.jpeg,.img" multiple name="additionalImageFile" id="additionalImageFile" />
+                <div>
+                    @if (Model.AdditionalPictures != null) foreach (ImageUri picture in Model.AdditionalPictures)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 d-flex border p-2">
+                                <img class="img-block w-50 border" src="~/images/@picture.Uri" />
+                                <div class="w-50 p-1">
+                                    <button type="button" class="btn btn-danger w-100 delete-picture" picid="@picture.Id">Удалить</button>
+                                </div>
+                            </div>
+                        }
+                </div>
+            </div>
+            <div>
+                <select asp-for="MHCategoryId" asp-items="@(new SelectList(ViewBag.Categories, nameof(Model.MHCategory.Id), nameof(Model.MHCategory.Name)))"></select>
+            </div>
+            <div class="div-box mb-3">
+                <label class="form-check-label" asp-for="IsActive"></label>
+                <input class="form-check-input" asp-for="IsActive">
+                <span class="invalid-feedback" asp-validation-for="IsActive"></span>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Сохранить" />
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(()=>{
+        $('.delete-picture').on('click', function(e){
+            let picid = $(this).attr('picid');
+            let detid = $('input[name="Id"]').val();
+            $.ajax({
+                url: '/admin/details/removepic',
+                method: 'POST',
+                data: {picId: picid, detId: detid},
+                success: ()=>{
+                    $(this).parents().eq(3).find('input').removeClass('d-none');
+                    $(this).parents().eq(1).remove();
+                    @*console.log(picid + detid)*@
+                },
+                error: (response)=>{
+                    console.log(response)
+                },
+            });
+        })
+        var newCKEdit = CKEDITOR.replace('@Html.IdFor(x=>x.Description)');
+        newCKEdit.updateElement();
+    })
+</script>

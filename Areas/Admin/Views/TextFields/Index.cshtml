@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TextField>
+@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+
+<div class="pt-5">
+    <h2 class="text-center">@strTitle</h2>
+    <div>
+        <h3>Редактировать страницы сайта</h3>        
+        @if (Model.Any())
+        {
+            <div>
+                @foreach (TextField entity in Model)
+                {
+                    <div class="row mb-3 border rounded p-3">
+                        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-page="@entity.Name">@entity.Title</a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="div-box">
+        <form asp-area="" asp-controller="Personal" asp-action="Logout" method="post">
+            <input class="btn btn-danger" type="submit" value="Выйти" />
+        </form>
+    </div>
+</div>

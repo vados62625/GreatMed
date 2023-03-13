@@ -1,13 +1,16 @@
-﻿using GreatMed.Models;
+﻿using MotoHelp.Models;
 
-namespace GreatMed.Data.Interfaces
+namespace MotoHelp.Data.Interfaces
 {
     public interface IGetServices
     {
 
-        IEnumerable<GMService> gMServices { get; }
+        IEnumerable<MHService> services { get; }
 
-        GMService GetService(int serviceId);
+        MHService GetService(int serviceId);
+		IEnumerable<MHService> activeServices { get; }
+        void DeleteService(int serviceId);
+        void EditService(MHService service);
 
     }
 }

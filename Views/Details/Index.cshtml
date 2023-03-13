@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MHDetail>
+<h1 class="display-5 text-center mb-5 pt-5">@ViewBag.Title</h1>
+<div class="details">
+    <div class="row mb-3">
+        <div class="categories dropdown">
+            <button type="button" id="dropdownMenuLink" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Выбрать категорию
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @foreach (MHCategory category in ViewBag.Categories)
+                {
+                    <a class="dropdown-item @if(category.Url == ViewBag.CurrentCategory){<text>bg-warning</text>}" asp-route="catalog" asp-route-category="@category.Url">@category.Name</a>
+                }
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" asp-controller="Details" asp-action="Index" asp-route-category="">Все запчасти</a>
+            </div>
+        </div>
+        <div class="sort"></div>
+    </div>
+    <div class="row mb-3">
+        @{
+            foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4" style="height: auto; cursor: pointer">
+                    <a asp-route="catalog" asp-route-id="@item.Id" asp-route-category="@item.MHCategory.Url" class="detail-card border rounded h-100 p-3 bg-white d-flex justify-content-between flex-column" sid="@item.Id">
+                        <h3 class="fs-4 mb-3">@item.Name</h3>
+                        @if (item.TitlePictire != null)
+                        {
+                            <img class="w-100 img-thumbnail mb-3" src="~/images/@item.TitlePictire.Uri"></img>
+                        }
+                        <div class="detail-price text-center fs-4">@item.Price руб.</div>
+                    </a>
+                </div>
+
+            }
+        }
+    </div>
+    @if (ViewBag.Description != null)
+    {
+        <div class="row category-description">@ViewBag.Description</div>
+    }
+</div>

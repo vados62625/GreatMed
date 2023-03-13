@@ -1,8 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Политика конфиденциальности";
+﻿@model TextField
+@{
+    ViewBag.Title = Model.MetaTitle ?? null;
+    ViewBag.Description = Model.MetaDescription ?? null;
 }
-<h1>@ViewData["Title"]</h1>
-<div class="container">
+<h1 class="display-5 text-center mb-5 pt-5">@Model.Title</h1>
+<div class="privacy-page fs-5">
+    @Html.Raw(Model.Text)
+</div>
+@*<h1 class="display-5 mb-5 text-center">@ViewData["Title"]</h1>
     <div class="col-12">
         <ul class="fs-3">1. ОБЩИЕ ПОЛОЖЕНИЯ
             <li class="fs-5">
@@ -18,5 +23,4 @@
                 (далее — Работник).
             </li>
         </ul>
-    </div>
-</div>
+</div>*@

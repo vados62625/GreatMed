@@ -1,0 +1,62 @@
+﻿@model DataManager
+@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+
+<div class="pt-5">
+    <h2 class="text-center">@strTitle</h2>
+    <div>
+        <h3>Услуги</h3>
+        <div class="div-box">
+            <a class="btn btn-secondary mb-3" asp-area="Admin" asp-controller="GetServices" asp-action="Edit" asp-route-id="">Добавить услугу</a>
+        </div>
+        @if (Model.GetServices.services.Any())
+        {
+            <div class="rounded overflow-hidden mb-3">
+                <table class="table table-success table-striped table-hover m-0">
+                    <thead>
+                        <tr>
+                            <th class="w-75" scope="col">Название</th>
+                            <th scope="col">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (MHService entity in Model.GetServices.services)
+                        {
+                            <tr>
+                                <td class="table-row-title">
+                                    <div class="mb-2">
+                                        @($"{entity.Name}")
+                                    </div>
+                                </td>
+                                <td class="d-flex" align="right">
+                                    <a class="btn btn-success me-2" asp-area="Admin" asp-controller="GetServices" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a>
+                                    <form class="p-0" id="form-@entity.Id" asp-area="Admin" asp-controller="GetServices" asp-action="Delete" method="post">
+                                        <input type="hidden" name="id" value="@entity.Id">
+                                        <a class="btn btn-danger" href="#" onclick="confirmDelete(document.getElementById('form-@entity.Id'));">Удалить</a>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>    
+    <div class="mb-3">
+        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+            <input class="btn btn-danger" type="submit" value="Выйти" />
+        </form>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(el){
+        if (confirm('Удалить запись?')) {
+              el.submit();
+            } else {
+                return
+            }
+        }
+</script>

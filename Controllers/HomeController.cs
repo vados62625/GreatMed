@@ -1,18 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MotoHelp.Data.Interfaces;
+using MotoHelp.Models;
 
-namespace GreatMed.Controllers
+namespace MotoHelp.Controllers
 {
-    public class HomeController : Controller
+	public class HomeController : Controller
     {
-
-        public IActionResult Index()
+        private readonly ITextFieldsRepository textFieldsRepository;
+        public HomeController (ITextFieldsRepository textFieldsRepository)
         {
-            return View();
+            this.textFieldsRepository = textFieldsRepository;
         }
-
+		public IActionResult Index()
+        {
+            TextField page = textFieldsRepository.GetTextFieldByPageName("PageIndex");
+            return View(page);
+        }
+        [Route("privacy")]
         public IActionResult Privacy()
         {
-            return View();
+            TextField page = textFieldsRepository.GetTextFieldByPageName("PagePrivacy");
+            return View(page);
         }
 
     }

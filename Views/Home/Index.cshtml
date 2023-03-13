@@ -1,3 +1,12 @@
-﻿<div>
-    <h1 class="display-4 text-center">Главная</h1>
+﻿@model TextField
+@{
+    ViewBag.Title = Model.MetaTitle ?? null;
+    ViewBag.Description = Model.MetaDescription ?? null;
+}
+<h1 class="display-5 text-center mb-5 pt-5">@Model.Title</h1>
+<div class="home-page fs-5">
+    @Html.Raw(Model.Text)
 </div>
+<script>
+    $('.home-page img').addClass('w-50 h-auto me-4 mb-4 rounded')
+</script>
